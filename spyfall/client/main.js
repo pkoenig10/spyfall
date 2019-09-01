@@ -321,7 +321,6 @@ Template.createGame.helpers({
 });
 
 Template.createGame.rendered = function (event) {
-  window.waldo.refreshAllTags();
   $("#player-name").focus();
 };
 
@@ -384,7 +383,6 @@ Template.joinGame.helpers({
 
 
 Template.joinGame.rendered = function (event) {
-  window.waldo.refreshAllTags();
   resetUserState();
 
   var urlAccessCode = Session.get('urlAccessCode');
@@ -457,7 +455,6 @@ Template.lobby.events({
 });
 
 Template.lobby.rendered = function (event) {
-  window.waldo.refreshAllTags();
   var url = getAccessLink();
   var qrcodesvg = new Qrcodesvg(url, "qrcode", 250);
   qrcodesvg.draw();
@@ -479,10 +476,6 @@ function getTimeRemaining(){
   }
 
   return timeRemaining;
-}
-
-Template.gameView.rendered = function () {
-  window.waldo.refreshAllTags();
 }
 
 Template.gameView.helpers({
@@ -521,7 +514,6 @@ Template.gameView.helpers({
     return moment(timeRemaining).format('mm[<span>:</span>]ss');
   }
 });
-
 
 Template.gameView.events({
   'click .btn-leave': leaveGame,

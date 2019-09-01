@@ -14,7 +14,6 @@
 <body></body>
 
 <template name="main">
-  <div id="waldo-tag-3693"></div>
   <div dir="{{ textDirection }}" class="container dir-{{textDirection}} lang-{{ language }}">
     <div class="main-content">
       {{> Template.dynamic template=whichView}}
@@ -267,7 +266,4 @@
     <br>
     <a href="https://github.com/mpcovcd/spyfall" target="_blank">https://github.com/mpcovcd/spyfall</a>
   </div>
-
-  {{! waldo ad tag -- needs to be loaded after all the html is rendered to work, so adding it in the footer --> }}
-  <script type="text/javascript" src="//cdn.thisiswaldo.com/static/js/3692.js"></script>
 </template>
